@@ -4,44 +4,37 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    // Transform of the camera to shake. Grabs the gameObject's transform
-    // if null.
-    public Transform camTransform;
 
-    // How long the object should shake for.
+
+    //Duración del temblor de cámara
     public float shakeDuration = 0f;
 
-    // Amplitude of the shake. A larger value shakes the camera harder.
+    //Indica la cantidad máxima de desplazamiento de la cámara
     public float shakeAmount = 0.7f;
-    public float decreaseFactor = 1.0f;
+
 
     Vector3 originalPos;
 
-    void Awake()
-    {
-        if (camTransform == null)
-        {
-            camTransform = GetComponent(typeof(Transform)) as Transform;
-        }
-    }
 
-    void OnEnable()
+    private void Awake()
     {
-        originalPos = camTransform.localPosition;
+        //Guardamos el vector de la posición original de la cámara
+        originalPos=transform.position;
     }
 
     void Update()
     {
+        //La cámara tiembla durante la duración indicada, al terminar vielve a la posición original
         if (shakeDuration > 0)
         {
-            camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+            transform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 
-            shakeDuration -= Time.deltaTime * decreaseFactor;
+            shakeDuration -= Time.deltaTime;
         }
         else
         {
             shakeDuration = 0f;
-            camTransform.localPosition = originalPos;
+            transform.localPosition = originalPos;
         }
     }
 }

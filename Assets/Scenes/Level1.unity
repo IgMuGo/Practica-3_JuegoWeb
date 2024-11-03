@@ -10484,10 +10484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a91467baa35cc4fa5628e6b31f7732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}
   shakeDuration: 0
   shakeAmount: 0.25
-  decreaseFactor: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -21504,7 +21502,6 @@ MonoBehaviour:
   worldCanvasPoints: {fileID: 5880197216614032816, guid: ac62066fcc7b6f94f93e83dfbb738386, type: 3}
   comboTime: 2.5
   comboMultiplier: 0
-  comboClock: 0
   highScoreText: {fileID: 2109282476}
   restartGameText: {fileID: 84364719}
 --- !u!114 &1784507198
@@ -21656,9 +21653,6 @@ MonoBehaviour:
   - 7
   - -7
   timeBtwnWaves: 2
-  waveClock: 0
-  spawnPoints: 0
-  unlockedEnemyTypes: 0
   hitStop: {fileID: 1784507198}
 --- !u!95 &1864943720
 Animator:

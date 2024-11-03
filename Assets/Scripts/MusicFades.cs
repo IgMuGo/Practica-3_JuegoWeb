@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Este script sirve para realizar fades en los reproductores de música mediante una corutina
 public class MusicFades : MonoBehaviour
 {
     AudioSource audioSource;
@@ -18,6 +19,8 @@ public class MusicFades : MonoBehaviour
         StartCoroutine(StartFade(duration, targetVolume));
     }
 
+    //Cambia el volumen del audiosource desde el volumen inicial hasta un valor pasado como parámetro
+    //La duración del fade también se indica como parámetro
     IEnumerator StartFade(float duration, float targetVolume)
     {
         float currentTime = 0;

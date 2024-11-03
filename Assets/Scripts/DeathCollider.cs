@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeathCollider : MonoBehaviour
 {
+
+    //Destruye los objetos con tag PlayerBullet o EnemyBullet al colisionar
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PlayerBullet" || collision.gameObject.tag == "EnemyBullet")
